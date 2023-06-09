@@ -22,13 +22,13 @@ class Tamu extends CI_Controller
 
     function tambah()
     {
-        $kode_tamu = $this->input->post('kode_tamu');
-        $nama_tamu = $this->input->post('nama_tamu');
-        $densitas = $this->input->post('densitas');
+        $nama = $this->input->post('nama');
+        $email = $this->input->post('email');
+        $no_telpon = $this->input->post('no_telpon');
         $data = [
-            'kode_tamu' => $kode_tamu,
-            'nama_tamu' => $nama_tamu,
-            'densitas' => $densitas,
+            'nama' => $nama,
+            'email' => $email,
+            'no_telpon' => $no_telpon,
         ];
         $this->Global_model->tambah_tamu($data);
         $this->session->set_flashdata('success', 'Data Berhasil Di Tambah');
@@ -37,17 +37,17 @@ class Tamu extends CI_Controller
 
     function edit()
     {
-        $kode_tamu = $this->input->post('kode_tamu');
-        $nama_tamu = $this->input->post('nama_tamu');
-        $densitas = $this->input->post('densitas');
+        $nama = $this->input->post('nama');
+        $email = $this->input->post('email');
+        $no_telpon = $this->input->post('no_telpon');
         $id_tamu = $this->input->post('id_tamu');
         $where = [
             'id_tamu' => $id_tamu,
         ];
         $data = [
-            'kode_tamu' => $kode_tamu,
-            'nama_tamu' => $nama_tamu,
-            'densitas' => $densitas,
+            'nama' => $nama,
+            'email' => $email,
+            'no_telpon' => $no_telpon,
         ];
         $this->Global_model->update_tamu($where, $data);
         $this->session->set_flashdata('success', 'Data Berhasil Di Edit');
