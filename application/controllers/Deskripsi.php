@@ -11,7 +11,6 @@ class Deskripsi extends CI_Controller
         $this->load->model('Global_model');
     }
 
-
     public function index()
     {
         $data['get_all_deskripsi']  = $this->Global_model->result_deskripsi();
@@ -21,8 +20,37 @@ class Deskripsi extends CI_Controller
         $this->load->view('template/footer');
     }
 
-    public function logout()
+    function tambah()
     {
-        $this->role_login->logout();
+        $nama_deskripsi = $this->input->post('nama_deskripsi');
+        $data = [
+            'nama_deskripsi' => $nama_deskripsi,
+        ];
+        $this->Global_model->tambah_deskripsi($data);
+        $this->session->set_flashdata('success', 'Data Berhasil Di Tambah');
+        redirect('deskripsi');
+    }
+
+
+    function edit()
+    {
+        $id_deskripsi_mobil = $this->input->post('id_deskripsi_mobil');
+        $nama_deskripsi = $this->input->post('nama_deskripsi');
+        $where = [
+            'id_deskripsi_mobil' => $id_deskripsi_mobil,
+        ];
+        $data = [
+            'nama_deskripsi' => $nama_deskripsi,
+        ];
+        $this->Global_model->update_deskripsi($where, $data);
+        $this->session->set_flashdata('success', 'Data Berhasil Di Edit');
+        redirect('deskripsi');
+    }
+
+    function hapus($id_deskripsi_mobil)
+    {
+        $this->Global_model->delete_deskripsi($id_deskripsi_mobil);
+        $this->session->set_flashdata('danger', 'Data Berhasil Di Hapus');
+        redirect('deskripsi');
     }
 }

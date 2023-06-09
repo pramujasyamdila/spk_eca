@@ -40,6 +40,7 @@ class Global_model extends CI_Model
         $updatedId = $this->db->get('tbl_deskripsi_mobil')->row_array();
         return $updatedId;
     }
+    
 
 
     // ININ UNTUK MOBIL
@@ -190,5 +191,5 @@ class Global_model extends CI_Model
     }
 
 
-    
+
 }

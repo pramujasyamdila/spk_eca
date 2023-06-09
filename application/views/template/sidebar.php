@@ -18,13 +18,13 @@
             <li><a class="nav-link" href="<?= base_url('mobil') ?>"><i class="fas fa-fire"></i> <span> Mobil</span></a></li>
             <li class="menu-header">Data Master Dempster Shafer</li>
             <li>
-                <a class="nav-link" href="<?= base_url('tbl_alasan') ?>"><i class="fas fa-fire"></i> <span> Alasan</span></a>
+                <a class="nav-link" href="<?= base_url('alasan') ?>"><i class="fas fa-fire"></i> <span> Alasan</span></a>
             </li>
             <li>
-                <a class="nav-link" href="<?= base_url('tbl_alasan') ?>"><i class="fas fa-fire"></i> <span> Solusi</span></a>
+                <a class="nav-link" href="<?= base_url('solusi') ?>"><i class="fas fa-fire"></i> <span> Solusi</span></a>
             </li>
             <li>
-                <a class="nav-link" href="<?= base_url('tbl_alasan') ?>"><i class="fas fa-fire"></i> <span> Relasi</span></a>
+                <a class="nav-link" href="<?= base_url('relasi') ?>"><i class="fas fa-fire"></i> <span> Relasi</span></a>
             </li>
         </ul>
 

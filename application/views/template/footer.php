@@ -33,6 +33,11 @@
 <script src="<?= base_url() ?>assets/js/custom.js"></script>
 <script src="<?= base_url('assets/sweetalert.min.js') ?>"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.table').DataTable({});
+    });
+</script>
 </body>
 
 </html>
