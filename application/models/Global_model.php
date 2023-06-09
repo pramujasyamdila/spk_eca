@@ -40,7 +40,7 @@ class Global_model extends CI_Model
         $updatedId = $this->db->get('tbl_deskripsi_mobil')->row_array();
         return $updatedId;
     }
-    
+
 
 
     // ININ UNTUK MOBIL
@@ -191,5 +191,34 @@ class Global_model extends CI_Model
     }
 
 
+    // solusi
+    function result_solusi()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_solusi');
+        $this->db->join('tbl_mobil', 'tbl_solusi.id_mobil = tbl_mobil.id_mobil');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
+    function tambah_solusi($data)
+    {
+        $this->db->insert('tbl_solusi', $data);
+        return $this->db->affected_rows();
+    }
+
+    public function update_solusi($where, $data)
+    {
+        $this->db->update('tbl_solusi', $data, $where);
+        $updatedId = $this->db->get('tbl_solusi')->row_array();
+        return $updatedId;
+    }
+
+
+    public function delete_solusi($id_solusi)
+    {
+        $this->db->delete('tbl_solusi', ['id_solusi' => $id_solusi]);
+        return $this->db->affected_rows();
+    }
+    // end solusi
 }
